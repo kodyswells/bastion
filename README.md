@@ -118,6 +118,58 @@ Each collector gathers raw data, which is normalized into a consistent artifact 
 
 ---
 
+## Tech Stack
+
+### Platform
+- **Operating System:** Windows 10 / Windows 11
+
+### Language and Runtime
+- **Python 3.11+**
+- **Python virtual environments (venv)**
+
+### Core Libraries and Frameworks
+- **Python Standard Library**
+  - argparse (CLI)
+  - sqlite3 (local storage)
+  - hashlib (file hashing)
+  - logging (structured output)
+  - json and dataclasses (normalization)
+  - subprocess (controlled system queries)
+
+- **Windows Integration**
+  - pywin32 (Windows APIs and registry access)
+  - psutil (service and system metadata)
+
+### Data Storage
+- **SQLite**
+  - Embedded local database for baseline and scan snapshots
+  - Schema-driven storage
+
+### Detection Model
+- **Baseline and drift-based detection**
+  - Snapshot comparison of persistence artifacts
+  - Added, removed, and modified artifact detection
+
+### Interface and Output
+- **Command-Line Interface (CLI)**
+  - bastion baseline
+  - bastion scan
+
+- **Console reporting**
+  - Human-readable, explainable findings
+
+### Development and Tooling
+- **Git and GitHub** (version control and portfolio hosting)
+- **pyproject.toml** (modern Python packaging and dependency management)
+- **pytest** (planned, for unit and integration testing)
+
+### Security Focus
+- **Blue-team and detection engineering**
+  - Host-based intrusion detection
+  - Windows persistence monitoring
+
+---
+
 ## Installation
 
 ### Requirements
@@ -128,7 +180,7 @@ Each collector gathers raw data, which is normalized into a consistent artifact 
 ### Setup
 
 ```bash
-git clone https://github.com/yourusername/bastion
+git clone https://github.com/kodyswells/bastion
 cd bastion
 pip install -r requirements.txt
 ```
@@ -182,3 +234,4 @@ Planned future enhancements include:
 ## Disclaimer
 
 Bastion is an educational and research project. It is not intended to replace enterprise endpoint detection or antivirus solutions.
+
